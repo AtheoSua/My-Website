@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atheo Sua - Personal Website & Resume</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Welcome to My Personal Website</h1>
+    <nav>
+      <div class ="navigation">
+      <a href="Index.html">Home</a>
+      <a href="About.html">About</a>
+      <a href="Contact.html">Contact</a>
+      </div>
+    </nav>
+    <button id="dark-toggle" style="margin-top: 10px; padding: 6px 12px; background-color: #333; color: white; border: none; border-radius: 6px; cursor: pointer;">
+      Toggle Dark Mode
+    </button>
+  </header>
+
+  <div class="description-container">
+  <div class="description-heading">
+  <h1 class="section-heading">About This Website</h1>
+  </div>
+  <p>
+    This website serves as a digital portfolio and a personal archive of the projects I’ve created during my time as a student at FEU Tech. 
+    It contains my works in developing HTML and CSS as a part of the Web Design with Client-Side Scripting course. Here, I showcase 
+    not only the technical assesstments I've completed but also the personal design experiments that demonstrate my growth as a web 
+    design and cybersecurity student.
+  </p>
+  <p>
+    My goal with this site is to reflect my journey in learning front-end development and back-end development from understanding the 
+    foundations of HTML structure to styling responsive and accessible layouts with CSS and later Java interactions. 
+    Each project represents a step forward in that learning process, and I'm continuously improving both my coding skills and creative skills.
+  </p>
+  <p>
+    Whether you’re a classmate, instructor, or potential collaborator, I appreciate you exploring the projects below and see how my 
+    capabilities have progressed. Thank you for visiting!
+  </p>
+</div>
+
+  <div class="projects-container">
+    <div class="projects-heading">
+      <h1>My Projects</h1>
+    </div>
+    <ul class="project-list">
+      <li class="project-item">
+      <strong><a href="Webpage 1.html">Project SDGs:</a></strong><br>
+      <small>A website with 2 webpages that contains info about the chosen SDG...</small>
+      <img src="Preview 1.png" alt="Preview of Project SDGs" class="project-preview">
+      </li>
+      <li class="project-item">
+      <strong><a href="Periodic Table.html">Project Elements:</a></strong><br>
+      <small>A webpage of the Periodic Table of Elements...</small>
+      <img src="Preview 2.png" alt="Preview of Periodic Table" class="project-preview">
+      </li>
+      <li class="project-item">
+      <strong><a href="Index1.html">Project Registrar:</a></strong><br>
+      <small>A webpage that simulates a registration form...</small>
+      <img src="Preview 3.png" alt="Preview of Registrar" class="project-preview">
+      </li>
+      <li class="project-item">
+      <strong><a href="Untitled-1.html">Project Grid</a></strong><br>
+      <small>A webpage of an SDG that shows the 960 Grid style...</small>
+      <img src="Preview 4.png" alt="Preview of Project Grid" class="project-preview">
+      </li>
+      </ul>
+</div>
+<footer style="text-align: center; margin-top: 30px; color: white;">
+  <p>© 2025 My Website</p>
+</footer>
+<script>
+  // Define all elements that can have dark mode
+  const elementsToToggle = [
+    document.body,
+    document.querySelector("header"),
+    document.querySelector("footer"),
+    document.querySelector(".projects-container"),
+    document.querySelector(".description-container"),
+    document.querySelector(".contact-container"),
+    document.querySelector(".resume")
+  ];
+
+  // Function to apply/remove dark mode
+  function applyDarkMode(isDark) {
+    let i = 0;
+    while (i < elementsToToggle.length) {
+      const el = elementsToToggle[i];
+      if (el) {
+        if (isDark) {
+          el.classList.add("dark-mode");
+        } else {
+          el.classList.remove("dark-mode");
+        }
+      }
+      i++;
+    }
+  }
+
+  // Apply dark mode if saved in localStorage
+  const isDarkMode = localStorage.getItem("darkMode") === "true";
+  applyDarkMode(isDarkMode);
+
+  // Optional: Enable toggle button logic only if it exists
+  const toggleButton = document.getElementById("dark-toggle");
+  if (toggleButton) {
+    toggleButton.addEventListener("click", () => {
+      const newMode = !document.body.classList.contains("dark-mode");
+      applyDarkMode(newMode);
+      localStorage.setItem("darkMode", newMode);
+    });
+  }
+</script>
+
+</body>
+</html>

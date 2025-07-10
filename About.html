@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atheo Sua - Personal Website & Resume</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Website Header -->
+  <header>
+    <h1>Welcome to My Personal Website</h1>
+    <nav>
+      <div class ="navigation">
+      <a href="Index.html">Home</a>
+      <a href="About.html">About</a>
+      <a href="Contact.html">Contact</a>
+      </div>
+    </nav>
+  </header>
+  
+  <div class="resume">
+    <div class="left-column">
+      <img src="Profile.jpg" alt="Atheo Sua" class="profile-pic">
+      <div class="contact-info">
+        <p>📞 +639166904855</p>
+        <p>📧 202411231@fit.edu.ph</p>
+        <p>📍 1565 A Maceda St. Sampaloc, Manila</p>
+      </div>
+      <div class="section">
+        <h3>Reference</h3>
+        <p><strong>Ma. Welda Sua</strong></p>
+        <p>📞 +639175085586</p>
+        <p>📧 dada.cortes14@gmail.com</p>
+
+        <h3>Skills</h3>
+        <ul>
+          <li>Digital Art</li>
+          <li>C++</li>
+          <li>Java</li>
+          <li>Python</li>
+          <li>HTML</li>
+          <li>Organized</li>
+          <li>Cooperative</li>
+          <li>Adaptive</li>
+        </ul>
+
+        <h3>Certification</h3>
+        <p>Introduction to Cybersecurity<br><small>Issued by Cisco<br>2024</small></p>
+      </div>
+    </div>
+
+    <div class="right-column">
+      <h1>Atheo Carl C. Sua</h1>
+      <h2>Student of FEU Tech</h2>
+      <p class="intro">
+        A hardworking student of FEU Tech striving to be a competent IT Expert and a Cybersecurity Specialist with adaptive expertise in different coding languages
+        and designing styles, and with experience in forming understanding cooperative connections. While being prepared to improve within a team environment with the motivation
+        to create programs and software with quality as the main objective.
+      </p>
+
+      <div class="section2">
+        <h3>Work Experience</h3>
+        <ul>
+          <li>Junior Officer, Freshman Society, Manila, Feu Tech — 2025 - Present<br>
+            <small>Volunteered to be a Junior Officer of the Creative Department for a school organization
+            that puts importance on the freshmen of FEU Tech where I achieved experience in creating advertisements for the organization.</small></li>
+          <li>Student, Manila, FEU Tech — 2023 - 2024<br>
+            <small>Finished 80 hours of work immersion at FEU Tech with specialization Introduction to Cybersecurity. Gaining knowledge of cybersecurity, including the global
+            implications of cyber threats on industries, and why cybersecurity is a growing profession.</small></li>
+          <li>Member, Eureka Science Organization, Manila, FEU — 2022 - 2023<br>
+            <small>Volunteered to be a member of the Creative Department for a science organization where I
+            achieved experience in creating Facebook page posts.</small></li>
+        </ul>
+      </div>
+
+      <div class="section2">
+        <h3>Education</h3>
+        <p>FEU Institute of Technology — 2024 - Present<br>
+          <small>Bachelor of Science in Information with Specialization in Cybersecurity</small></p>
+        <p>FEU High School Manila (STEM) — 2022 - 2024<br>
+          <small>Grade 12, With Honors ( A. Y. 2023 - 2024 )<br>
+          Grade 11, With Honors ( A. Y. 2022 - 2023 )</small></p>
+        <p>Dominican School Manila — 2019 - 2022<br>
+          <small>Grade 10, With Honors (A. Y. 2021 - 2022 )<br>
+          Grade 9, With Honors (A. Y. 2020 - 2021)<br>
+          Grade 8 (A. Y. 2019 - 2020)</small></p>
+        <p>Mother Goose Special Science High School — 2018 - 2019<br>
+          <small>Grade 7 ( A. Y. 2018 - 2019 )</small></p>
+      </div>
+    </div>
+  </div>
+
+  <footer style="text-align: center; margin-top: 30px; color: white;">
+    <p>© 2025 My Website</p>
+  </footer>
+<script>
+  // Define all elements that can have dark mode
+  const elementsToToggle = [
+    document.body,
+    document.querySelector("header"),
+    document.querySelector("footer"),
+    document.querySelector(".projects-container"),
+    document.querySelector(".description-container"),
+    document.querySelector(".contact-container"),
+    document.querySelector(".resume")
+  ];
+
+  // Function to apply/remove dark mode
+  function applyDarkMode(isDark) {
+    let i = 0;
+    while (i < elementsToToggle.length) {
+      const el = elementsToToggle[i];
+      if (el) {
+        if (isDark) {
+          el.classList.add("dark-mode");
+        } else {
+          el.classList.remove("dark-mode");
+        }
+      }
+      i++;
+    }
+  }
+
+  // Apply dark mode if saved in localStorage
+  const isDarkMode = localStorage.getItem("darkMode") === "true";
+  applyDarkMode(isDarkMode);
+
+  // Optional: Enable toggle button logic only if it exists
+  const toggleButton = document.getElementById("dark-toggle");
+  if (toggleButton) {
+    toggleButton.addEventListener("click", () => {
+      const newMode = !document.body.classList.contains("dark-mode");
+      applyDarkMode(newMode);
+      localStorage.setItem("darkMode", newMode);
+    });
+  }
+</script>
+
+</body>
+</html>

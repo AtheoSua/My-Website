@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>2 Column Layout</title>
+   <style>
+       body {
+           font-family: Arial, sans-serif;
+           margin: 0;
+           padding: 0;
+           background-color: #D72638;
+       }
+       .container {
+           display: flex;
+           max-width: 960px;
+           margin: 20px auto;
+           background-color: #FFFFFF;
+                     display: flex;
+           width: 960px;
+           margin: 20px auto;
+       }
+        .sidebar_container {
+           display: flex;
+           max-width: 960px;
+           margin: 20px auto;
+           gap: 10px;
+           background-color: #FFFFFF;
+       }
+       .sidebar1 {
+           flex: 1;
+           padding: 20px;
+           background-color: #F4F4F4;
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+           font-family: Verdana, Geneva, Tahoma, sans-serif;
+       }
+       .sidebar1 img {
+           width: 100%;
+           height: 100%;
+           object-fit: contain;
+       }
+       .middle {
+           width: 100%;
+           padding: 20px;
+           background-color: #e5243b;
+           color: white;
+           order: 1;
+       }
+       .middle img {
+           width: 100%;
+           height: 100%;
+           object-fit: contain;
+       }
+       header {
+           background-color: #8B0000;
+           color: white;
+           text-align: center;
+           padding: 15px 0;
+       }
+       footer {
+           background-color: #8B0000;
+           color: white;
+           text-align: center;
+           padding: 10px;
+           margin-top: 20px;
+       }
+       
+       a {
+          text-decoration: none;
+          color: black;
+          font-weight: bold;
+       }
+       
+       .sidebar1 ul li a:hover {
+           color: #A4161A
+       }
+       .sidebar1 p {
+           font-family: Arial, sans-serif;
+       }
+        .home-button {
+           display: inline-block;
+           margin: 20px;
+           padding: 8px 16px;
+           background-color: #ae202f;
+           color: white;
+           text-decoration: none;
+           font-weight: bold;
+          border-radius: 6px;
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+          transition: background-color 0.2s ease, transform 0.1s ease;
+      }
+        .home-button:hover {
+          background-color: #e62c3f;
+      }
+        .home-button:active {
+          transform: scale(0.95);
+          background-color: #821823;
+          box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+      }
+   </style>
+</head>
+<body>
+<a href="Index.html" class="home-button">← Back to Home</a>
+<header>
+   <h2>United Nations | SDGs</h2>
+</header>
+
+<div class="container">
+    <div class="middle">
+        <h1>End Poverty in all its forms everywhere<h1>
+    </div>
+    <div class="middle">
+       <img src="https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/08/E-Goal-01-1024x1024.png" alt="SDG Goal 1 Logo">
+   </div>
+</div>
+</div>
+<div class="sidebar_container">
+   <div class="sidebar1">
+    <p>
+        Sustainable Development Goal 1 (No Poverty) aims to eradicate extreme poverty for all people everywhere by 2030, currently defined as living on less than $2.15 a day. It also seeks to reduce the proportion of people living in poverty in all its dimensions, ensure equal access to resources and services, and build resilience among the poor to economic, social, and environmental shocks. Achieving this goal is essential for creating a more equitable and sustainable world, as poverty is a root cause of hunger, poor health, limited education, and social instability.
+    </p>
+       <h2>SDG Navigation</h2>
+       <ul>
+           <li><a href="#goal1">No Poverty</a></li>
+           <li><a href="#goal2">Zero Hunger</a></li>
+           <li><a href="#goal3">Good Health and Well-Being</a></li>
+           <li><a href="#goal4">Quality Education</a></li>
+           <li><a href="#goal5">Gender Equality</a></li>
+           <li><a href="#goal6">Clean Water and Sanitation</a></li>
+           <li><a href="#goal7">Affordable and Clean Energy</a></li>
+           <li><a href="#goal8">Decent Work and Economic Growth</a></li>
+           <li><a href="#goal9">Industry, Innovation, and Infrastructure</a></li>
+           <li><a href="#goal10">Reduced Inequalities</a></li>
+           <li><a href="#goal11">Sustainable Cities and Communities</a></li>
+           <li><a href="#goal12">Responsible Consumption and Production</a></li>
+           <li><a href="#goal13">Climate Action</a></li>
+           <li><a href="#goal14">Life Below Water</a></li>
+           <li><a href="#goal15">Life on Land</a></li>
+           <li><a href="#goal16">Peace, Justice, and Strong Institutions</a></li>
+           <li><a href="#goal17">Partnerships for the Goals</a></li>
+       </ul>
+   </div>
+   <div class="sidebar1">
+       <img src="https://sdgs.un.org/sites/default/files/2023-08/SDG_report_2023_infographics_Goal%201.jpg" alt="SDG Goal 1 Infographic">
+   </div>
+</div>
+
+<footer>
+   <p>United Nations &copy; 2025</p>
+   <hr>
+   <p>| Contact | Copyright | Fraud Alert | Privacy Notice | Terms of Use |</p>
+</footer>
+
+</body>
+</html>

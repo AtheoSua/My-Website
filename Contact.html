@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.5">
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <h1>Welcome to My Personal Website</h1>
+        <nav>
+        <div class ="navigation">
+            <a href="Index.html">Home</a>
+            <a href="About.html">About</a>
+            <a href="Contact.html">Contact</a>
+        </div>
+        </nav>
+    </header>
+    <div class="contact-container">
+        <h3 class="section-heading">Contact Me</h3>
+            <form id="contact-form">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name">
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email">
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" rows="6"></textarea>
+            <button type="submit" class="image-button" id="sendBtn">
+              <img src="send-icon.png" alt="Send">
+            </button>
+            <video id="sendAnimation" width="300" autoplay muted style="display: none;">
+              <source src="send-animation.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+        </form>
+    </div>
+    <div id="successful-popup" class="hidden-popup">
+        ✅ Your message has been sent successfully! <br>
+    <small>(Click to dismiss)</small>
+    </div>  
+<script>
+document.getElementById("contact-form").addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const message = document.getElementById("message").value.trim();
+
+  if (!name || !email || !message) {
+    alert("Please fill out all fields before sending your message.");
+    return;
+  }
+
+  const formData = new FormData();
+  formData.append("name", name);
+  formData.append("email", email);
+  formData.append("message", message);
+
+  // Show video animation
+  document.getElementById("sendBtn").style.display = "none";
+  const video = document.getElementById("sendAnimation");
+  video.style.display = "block";
+  video.play();
+
+  // Submit data to Google Apps Script
+  fetch("https://script.google.com/macros/s/AKfycbzeT9CYkBYRi2qm_HlSl58O0WP5_0f8ZJNaIOxM1iNI4sDAGaSZEtCTZqlLO9jqkyGc/exec", {
+    method: "POST",
+    body: formData
+  })
+  .then(response => {
+    if (response.ok) {
+      document.getElementById("contact-form").reset();
+
+      // Optional: do something after video ends
+      video.addEventListener("ended", () => {
+        video.style.display = "none";
+
+        const popup = document.getElementById("successful-popup");
+        popup.classList.remove("hidden-popup");
+        popup.classList.add("popup-show");
+
+        if (!confirm("Would you like to send another Message?")) return;
+
+        document.getElementById("sendBtn").style.display = "inline-block";
+      });
+
+    } else {
+      alert("Failed to send. Please try again.");
+    }
+  })
+  .catch(error => {
+    console.error("Error:", error);
+    alert("There was an error sending your message.");
+  });
+});
+
+</script>
+
+    <footer style="text-align: center; margin-top: 30px; color: white;">
+        <p>© 2025 My Website</p>
+    </footer>
+<script>
+  // Define all elements that can have dark mode
+  const elementsToToggle = [
+    document.body,
+    document.querySelector("header"),
+    document.querySelector("footer"),
+    document.querySelector(".projects-container"),
+    document.querySelector(".description-container"),
+    document.querySelector(".contact-container"),
+    document.querySelector(".resume")
+  ];
+
+  // Function to apply/remove dark mode
+ function applyDarkMode(isDark) {
+    let i = 0;
+    while (i < elementsToToggle.length) {
+      const el = elementsToToggle[i];
+      if (el) {
+        if (isDark) {
+          el.classList.add("dark-mode");
+        } else {
+          el.classList.remove("dark-mode");
+        }
+      }
+      i++;
+    }
+  }
+
+  // Apply dark mode if saved in localStorage
+  const isDarkMode = localStorage.getItem("darkMode") === "true";
+  applyDarkMode(isDarkMode);
+
+  // Optional: Enable toggle button logic only if it exists
+  const toggleButton = document.getElementById("dark-toggle");
+  if (toggleButton) {
+    toggleButton.addEventListener("click", () => {
+      const newMode = !document.body.classList.contains("dark-mode");
+      applyDarkMode(newMode);
+      localStorage.setItem("darkMode", newMode);
+    });
+  }
+</script>
+
+</body>
+</html>
