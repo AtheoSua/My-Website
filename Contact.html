@@ -76,9 +76,10 @@ document.getElementById("contact-form").addEventListener("submit", function(even
       video.addEventListener("ended", () => {
         video.style.display = "none";
 
-        const popup = document.getElementById("successful-popup");
-        popup.classList.remove("hidden-popup");
-        popup.classList.add("popup-show");
+       document.getElementById("successful-popup").addEventListener("click", function() {
+  this.classList.remove("popup-show");
+  this.classList.add("hidden-popup");
+});
 
         if (!confirm("Would you like to send another Message?")) return;
 
