@@ -33,6 +33,10 @@
               <source src="send-animation.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
+        <div id="successful-popup" class="hidden-popup">
+                Message has been sent!✅<br>
+            <small>This will disappear shortly</small>
+        </div>
         </form>
     </div>
 <script>
@@ -47,6 +51,26 @@ document.getElementById("contact-form").addEventListener("submit", function(even
     alert("Please fill out all fields before sending your message.");
     return;
   }
+
+  // If all fields are filled, show the popup
+  showSuccessPopup();
+
+  // Optionally reset the form
+  this.reset();
+});
+
+// Popup logic
+function showSuccessPopup() {
+  const popup = document.getElementById("successful-popup");
+  popup.classList.remove("hidden-popup");
+  popup.classList.add("popup-show");
+
+  // Auto-hide after 3 seconds
+  setTimeout(() => {
+    popup.classList.remove("popup-show");
+    popup.classList.add("hidden-popup");
+  }, 3000);
+}
 
   const formData = new FormData();
   formData.append("name", name);
@@ -72,7 +96,7 @@ document.getElementById("contact-form").addEventListener("submit", function(even
       video.addEventListener("ended", () => {
         video.style.display = "none";
 
-        if (!confirm("Message Sent!✅ Would you like to send another Message?")) return;
+        if (!confirm("Would you like to send another Message?")) return;
 
         document.getElementById("sendBtn").style.display = "inline-block";
       });
@@ -87,6 +111,17 @@ document.getElementById("contact-form").addEventListener("submit", function(even
   });
 });
 
+  function showSuccessPopup() {
+  const popup = document.getElementById("successful-popup");
+  popup.classList.remove("hidden-popup");
+  popup.classList.add("popup-show");
+
+  // Auto-dismiss after 3 seconds
+  setTimeout(() => {
+    popup.classList.remove("popup-show");
+    popup.classList.add("hidden-popup");
+  }, 3000);
+}
 </script>
 
     <footer style="text-align: center; margin-top: 30px; color: white;">
