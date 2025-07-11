@@ -35,10 +35,6 @@
             </video>
         </form>
     </div>
-    <div id="successful-popup" class="hidden-popup">
-        ✅ Your message has been sent successfully! <br>
-    <small>(Click to dismiss)</small>
-    </div>  
 <script>
 document.getElementById("contact-form").addEventListener("submit", function(event) {
   event.preventDefault();
@@ -75,11 +71,6 @@ document.getElementById("contact-form").addEventListener("submit", function(even
       // Optional: do something after video ends
       video.addEventListener("ended", () => {
         video.style.display = "none";
-
-       document.getElementById("successful-popup").addEventListener("click", function() {
-  this.classList.remove("popup-show");
-  this.classList.add("hidden-popup");
-});
 
         if (!confirm("Message Sent!✅ Would you like to send another Message?")) return;
 
