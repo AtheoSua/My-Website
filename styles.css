@@ -15,7 +15,38 @@ body.dark-mode {
   background-size: cover;
   color: #f0f0f0;
 }
-
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #121212;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 6px solid #ffffff30;
+  border-top-color: #a68a56;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+#loader p {
+  font-size: 1.2em;
+  font-weight: bold;
+}
 /* HEADER */
 header {
   text-align: center;
