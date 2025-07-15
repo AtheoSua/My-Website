@@ -133,18 +133,18 @@
 
   loader.style.opacity = 1;
 
+  // ⏳ Delay before starting fade-out (e.g., 2000 ms = 2 seconds)
   setTimeout(() => {
     const fadeOut = setInterval(() => {
-      let currentOpacity = parseFloat(loader.style.opacity); // convert string to number
-      if (currentOpacity > 0) {
-        loader.style.opacity = currentOpacity - 0.05;
+      if (loader.style.opacity > 0) {
+        loader.style.opacity -= 0.05;
       } else {
         clearInterval(fadeOut);
         loader.style.display = "none";
         content.style.display = "block";
       }
     }, 30);
-  }, 5000); // wait 5 seconds before starting fade
+  }, 3000); // 👈 Delay here
 });
 </script>
 
