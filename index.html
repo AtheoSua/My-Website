@@ -113,6 +113,10 @@
       localStorage.setItem("darkMode", newMode);
     });
   }
+  window.addEventListener("DOMContentLoaded", () => {
+  document.querySelector(".description-container").classList.add("fade-slide-up");
+  document.querySelector(".projects-container").classList.add("fade-slide-up");
+  });
 </script>
 
 </body>
