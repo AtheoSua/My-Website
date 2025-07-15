@@ -127,16 +127,23 @@
   const loader = document.getElementById("loader");
   const content = document.getElementById("main-content");
 
+  window.addEventListener("load", function () {
+  const loader = document.getElementById("loader");
+  const content = document.getElementById("main-content");
+
   loader.style.opacity = 1;
-  const fadeOut = setInterval(() => {
-    if (loader.style.opacity > 0) {
-      loader.style.opacity -= 0.05;
-    } else {
-      clearInterval(fadeOut);
-      loader.style.display = "none";
-      content.style.display = "block";
-     }
-    }, 30);
+
+  setTimeout(() => {
+    const fadeOut = setInterval(() => {
+      if (loader.style.opacity > 0) {
+        loader.style.opacity -= 0.05;
+      } else {
+        clearInterval(fadeOut);
+        loader.style.display = "none";
+        content.style.display = "block";
+       }
+      }, 30);
+    }, 10000);
    });
 </script>
 
