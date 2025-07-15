@@ -90,62 +90,9 @@
       </div>
     </div>
   </div>
-<script>
- window.addEventListener("DOMContentLoaded", () => {
-    const rightCol = document.querySelector(".right-column");
-    if (rightCol) {
-      // Trigger the animation after a short delay
-      setTimeout(() => {
-        rightCol.classList.add("animate-in");
-      }, 300); // delay to give a smoother entry
-    }
-  });
-</script>
   <footer style="text-align: center; margin-top: 30px; color: white;">
     <p>© 2025 My Website</p>
   </footer>
-<script>
-  // Define all elements that can have dark mode
-  const elementsToToggle = [
-    document.body,
-    document.querySelector("header"),
-    document.querySelector("footer"),
-    document.querySelector(".projects-container"),
-    document.querySelector(".description-container"),
-    document.querySelector(".contact-container"),
-    document.querySelector(".resume")
-  ];
-
-  // Function to apply/remove dark mode
-  function applyDarkMode(isDark) {
-    let i = 0;
-    while (i < elementsToToggle.length) {
-      const el = elementsToToggle[i];
-      if (el) {
-        if (isDark) {
-          el.classList.add("dark-mode");
-        } else {
-          el.classList.remove("dark-mode");
-        }
-      }
-      i++;
-    }
-  }
-
-  // Apply dark mode if saved in localStorage
-  const isDarkMode = localStorage.getItem("darkMode") === "true";
-  applyDarkMode(isDarkMode);
-
-  // Optional: Enable toggle button logic only if it exists
-  const toggleButton = document.getElementById("dark-toggle");
-  if (toggleButton) {
-    toggleButton.addEventListener("click", () => {
-      const newMode = !document.body.classList.contains("dark-mode");
-      applyDarkMode(newMode);
-      localStorage.setItem("darkMode", newMode);
-    });
-  }
-</script>
-
+<script src="about.js"></script>
 </body>
 </html>
