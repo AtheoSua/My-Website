@@ -91,12 +91,14 @@
     </div>
   </div>
 <script>
-  window.addEventListener("DOMContentLoaded", () => {
-    const sections = document.querySelectorAll(".right-column");
-    sections.forEach((section, index) => {
-      section.classList.add("slide-in");
-      section.style.animationDelay = `${index * 0.3}s`;
-    });
+ window.addEventListener("DOMContentLoaded", () => {
+    const rightCol = document.querySelector(".right-column");
+    if (rightCol) {
+      // Trigger the animation after a short delay
+      setTimeout(() => {
+        rightCol.classList.add("animate-in");
+      }, 300); // delay to give a smoother entry
+    }
   });
 </script>
   <footer style="text-align: center; margin-top: 30px; color: white;">
