@@ -135,16 +135,17 @@
 
   setTimeout(() => {
     const fadeOut = setInterval(() => {
-      if (loader.style.opacity > 0) {
-        loader.style.opacity -= 0.05;
+      let currentOpacity = parseFloat(loader.style.opacity); // convert string to number
+      if (currentOpacity > 0) {
+        loader.style.opacity = currentOpacity - 0.05;
       } else {
         clearInterval(fadeOut);
         loader.style.display = "none";
         content.style.display = "block";
-       }
-      }, 30);
-    }, 10000);
-   });
+      }
+    }, 30);
+  }, 10000); // wait 10 seconds before starting fade
+});
 </script>
 
 </body>
