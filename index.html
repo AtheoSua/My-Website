@@ -123,30 +123,26 @@
   document.querySelector(".description-container").classList.add("fade-slide-up");
   document.querySelector(".projects-container").classList.add("fade-slide-up");
   });
-  window.addEventListener("load", function () {
-  const loader = document.getElementById("loader");
-  const content = document.getElementById("main-content");
+window.addEventListener("load", function () {
+    const loader = document.getElementById("loader");
+    const content = document.getElementById("main-content");
 
-  window.addEventListener("load", function () {
-  const loader = document.getElementById("loader");
-  const content = document.getElementById("main-content");
+    loader.style.opacity = 1;
 
-  loader.style.opacity = 1;
-
-  // ⏳ Delay before starting fade-out (e.g., 2000 ms = 2 seconds)
-  setTimeout(() => {
-    const fadeOut = setInterval(() => {
-      if (loader.style.opacity > 0) {
-        loader.style.opacity -= 0.05;
-      } else {
-        clearInterval(fadeOut);
-        loader.style.display = "none";
-        content.style.display = "block";
-      }
-    }, 30);
-  }, 3000); // 👈 Delay here
-});
+    // Delay before starting fade-out (3 seconds)
+    setTimeout(() => {
+      const fadeOut = setInterval(() => {
+        let currentOpacity = parseFloat(loader.style.opacity);
+        if (currentOpacity > 0) {
+          loader.style.opacity = currentOpacity - 0.05;
+        } else {
+          clearInterval(fadeOut);
+          loader.style.display = "none";
+          content.style.display = "block";
+        }
+      }, 30);
+    }, 3000); // 3-second delay before fading out
+  });
 </script>
-
 </body>
 </html>
