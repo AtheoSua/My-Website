@@ -90,7 +90,15 @@
       </div>
     </div>
   </div>
-
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll(".section2");
+    sections.forEach((section, index) => {
+      section.classList.add("slide-in");
+      section.style.animationDelay = `${index * 0.3}s`;
+    });
+  });
+</script>
   <footer style="text-align: center; margin-top: 30px; color: white;">
     <p>© 2025 My Website</p>
   </footer>
