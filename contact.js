@@ -61,12 +61,19 @@ document.addEventListener("DOMContentLoaded", () => {
       })
         .then(response => {
           if (!response.ok) throw new Error("Failed to send");
+
           form.reset();
           showSuccessPopup(popup);
 
           video.addEventListener("ended", () => {
             video.style.display = "none";
-            if (confirm("Would you like to send another message?")) {
+
+            let again;
+            do {
+              again = confirm("Would you like to send another message?");
+            } while (!again && !confirm("Are you sure you don’t want to send another message?"));
+
+            if (again) {
               sendBtn.style.display = "inline-block";
             }
           });
