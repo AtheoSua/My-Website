@@ -16,7 +16,7 @@ body.dark-mode {
   color: #f0f0f0;
 }
 .loader-image {
-  width: 120px;     /* adjust size as needed */
+  width: 120px; 
   height: auto;
   margin-bottom: 20px;
   animation: fadeIn 1s ease-in-out;
@@ -63,6 +63,17 @@ body.dark-mode {
   font-weight: bold;
 }
 /* HEADER */
+.logo-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.inline-logo {
+  width: 40px; 
+  height: auto;
+}
 header {
   text-align: center;
   background-color: #F2F2F2;
