@@ -73,6 +73,9 @@ body.dark-mode {
 .inline-logo {
   width: 40px; 
   height: auto;
+  max-width: 100%; 
+  object-fit: contain;
+  display: inline-block;
 }
 header {
   text-align: center;
