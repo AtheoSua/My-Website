@@ -16,7 +16,7 @@ body.dark-mode {
   color: #f0f0f0;
 }
 .loader-image {
-  width: 250px; 
+  width: 350px; 
   height: auto;
   margin-bottom: 20px;
   animation: fadeIn 1s ease-in-out;
